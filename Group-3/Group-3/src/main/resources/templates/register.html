@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Student MS</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+<div class="container" style="justify-content:center; align-items:center;">
+  <div class="card" style="width:400px;">
+    <h2>Register</h2>
+    <!-- Must match @RequestMapping("/auth") + @PostMapping("/register") -->
+    <form action="/auth/register" method="POST">
+      <div class="form-group">
+        <label for="regUsername">Username</label>
+        <input type="text" id="regUsername" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" name="password" required />
+      </div>
+      <button class="submit-btn">Register</button>
+    </form>
+
+    <p style="margin-top:15px;">
+      Already have an account? <a href="/auth/login">Login</a>
+    </p>
+  </div>
+</div>
+
+<script src="../static/script.js"></script>
+</body>
+</html>

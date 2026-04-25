@@ -1,0 +1,179 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll, let containers handle it */
+}
+
+/* LAYOUT CONTAINER */
+.container {
+    display: flex; /* This is the KEY line that puts items side-by-side */
+    height: 100vh;
+    width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-item {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #34495e;
+    border-left: 4px solid #3498db;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent main from overflowing */
+}
+
+/* HEADER */
+.header {
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    height: 70px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout-btn {
+    color: #e74c3c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.logout-btn:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+/* SECTIONS (Dashboard, Courses, etc.) */
+.section {
+    padding: 30px;
+    overflow-y: auto; /* Scroll inside the section if content is long */
+    flex: 1;
+    display: none; /* Hide all sections by default */
+}
+
+.section.active {
+    display: block; /* Show only the active section */
+}
+
+/* DASHBOARD CARDS */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 200px;
+}
+
+.card-title {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.card-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #2ecc71;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.table-header {
+    margin-bottom: 15px;
+}
