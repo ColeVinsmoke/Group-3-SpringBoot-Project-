@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Course Dashboard</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      Course MS
+    </div>
+
+    <div class="nav-item active" onclick="switchSection('dashboard', this)">
+      <i class="fas fa-chart-pie"></i> Dashboard
+    </div>
+
+    <div class="nav-item" onclick="switchSection('courses', this)">
+      <i class="fas fa-book"></i> Courses
+    </div>
+
+    <div class="nav-item" onclick="switchSection('mycourses', this)">
+      <i class="fas fa-graduation-cap"></i> My Courses
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-content">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h2 id="pageTitle"></h2>
+
+      <div class="user-profile">
+        <div class="user-avatar"><i class="fas fa-user"></i></div>
+        <span>Aldred</span>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="section active">
+
+        <div class="table-header">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="dashboard-cards">
+
+        <div class="card">
+          <div class="card-title">Total Credits</div>
+          <div class="card-value" id="totalCredits">0</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Enrolled Courses</div>
+          <div class="card-value" id="courseCount">0</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Credit Status</div>
+          <div id="creditStatus" class="status-badge">OK</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COURSES -->
+    <div id="courses" class="section">
+
+      <div class="table-header">
+        <h2>Available Courses</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th> Course Title</th>
+            <th>Credit Load</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="courseTable"></tbody>
+      </table>
+
+    </div>
+
+    <!-- MY COURSES -->
+    <div id="mycourses" class="section">
+
+      <div class="table-header">
+        <h2>My Courses</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Credit Load</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="myCourseTable"></tbody>
+      </table>
+
+      <div class="card">
+        <strong>Total Credits:</strong>
+        <span id="bottomCredits">0</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
