@@ -14,11 +14,14 @@
 
 body {
   background: var(--bg);
+  min-height: 100vh;
 }
 
 .container {
-  display: grid;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
 }
 
 h2 {
@@ -60,7 +63,10 @@ h2 {
 
 /* MAIN */
 .main-content {
-  flex: 1;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
 }
 
 .header {
@@ -108,7 +114,7 @@ h2 {
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 20px;
-  height: 100%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -179,4 +185,11 @@ input, select {
 label {
   margin-bottom: 5px;
   color: #1e293b;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
