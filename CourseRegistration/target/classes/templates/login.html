@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+  <div class="card" style="width:400px;">
+
+    <h2>Login</h2>
+
+    <!-- Success Message -->
+    <p th:if="${message}"
+       th:text="${message}"
+       style="color:green; margin-bottom:15px;">
+    </p>
+
+    <!-- Error Message -->
+    <p th:if="${error}"
+       th:text="${error}"
+       style="color:red; margin-bottom:15px;">
+    </p>
+
+    <!-- Login Form -->
+    <form th:action="@{/auth/login}" method="post">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+
+        <input type="email"
+               id="email"
+               name="email"
+               required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input type="password"
+               id="password"
+               name="password"
+               required />
+      </div>
+
+      <button class="submit-btn" type="submit">
+        Login
+      </button>
+
+    </form>
+
+    <p style="margin-top:15px;">
+      No account?
+      <a th:href="@{/auth/register}">
+        Register
+      </a>
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>
